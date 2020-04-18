@@ -4,11 +4,12 @@ import time
 
 # auth.txt contains the username and password separated by a newline
 username, password = open("auth.txt").readlines()
+domain = "icanhazsite.com"
 
 # Open the hover.com sign-in page in Chromium and log in
 # The control panel redirects to the sign in page and forwards the user to the control panel once they login.
 driver = webdriver.Firefox()
-driver.get("https://www.hover.com/control_panel/domain/icanhazsite.com")
+driver.get("https://www.hover.com/control_panel/domain/"+domain)
 
 # Find the username box and type username
 username_box = driver.find_element_by_name("username")
